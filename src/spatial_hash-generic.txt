@@ -1,0 +1,14 @@
+generic
+  type Discrete_Axis_Value_Type is range <>;
+
+  type Entity_ID_Type is range <>;
+
+  with package Entity_Sets is new Ada.Containers.Ordered_Sets
+    (Element_Type => Entity_ID_Type);
+
+  with procedure Bounding_Box
+    (Entity : in     Entity_ID_Type;
+     Bottom :    out Discrete_Axis_Value_Type'Base;
+     Height :    out Discrete_Axis_Value_Type'Base;
+     Left   :    out Discrete_Axis_Value_Type'Base;
+     Width  :    out Discrete_Axis_Value_Type'Base);

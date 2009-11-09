@@ -1,0 +1,29 @@
+(section
+  (ref "spatial_hash_clear")
+  (title "Spatial_Hash.Initialize")
+  (para procedure_desc "Initialize spatial hash.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim procedure_synopsis
+"with Spatial_Hash;
+
+subtype Axis_Value_t is Discrete_Axis_Value_Type'Base;
+subtype Cell_Size_t  is Axis_Value_t range 1 .. Axis_Value_t'Last;
+subtype Height_t     is Axis_Value_t range 1 .. Axis_Value_t'Last;
+subtype Width_t      is Axis_Value_t range 1 .. Axis_Value_t'Last;
+
+procedure Initialize
+  (Spatial_Hash :    out Spatial_Hash_t;
+   Width        : in     Width_t;
+   Height       : in     Height_t;
+   Cell_Size    : in     Cell_Size_t);
+pragma Postcondition (Is_Initialized (Spatial_Hash));
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_procedure "Initialize") " procedure
+      initializes the dimensions of the spatial hash structure "
+      (item parameter "Spatial_Hash") " to " (item parameter "Width")
+      " and " (item parameter "Height") ". The procedure sets
+      the lengths of the sides of cells to " (item parameter "Cell_Size") ".")))

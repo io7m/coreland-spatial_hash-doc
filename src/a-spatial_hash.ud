@@ -1,0 +1,18 @@
+(section
+  (ref "a_spatial_hash")
+  (title "Spatial_Hash API Reference")
+  (contents)
+
+  (subsection
+    (title "Generic Formal Parameters")
+    (para-verbatim ada_type_synopsis (render "spatial_hash-generic.txt"))
+    (para "The " (item ada_type "Entity_ID_Type") " type represents a
+      unique identifier for a given entity.")
+    (para "The " (item ada_type "Discrete_Axis_Value_Type") " type represents a
+      value on an X or Y axis.")
+    (para "The " (item ada_procedure "Bounding_Box") " procedure returns the
+      bounding box of the entity " (item parameter "Entity") "."))
+
+  (include "a-spatial_hash-types.ud")
+  (include "a-spatial_hash-initialize.ud")
+)

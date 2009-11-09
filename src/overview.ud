@@ -1,0 +1,40 @@
+(section
+  (title "Overview")
+
+  (subsection
+    (title "Algorithm")
+    (para "The " (item package "spatial_hash") " package implements a so-called
+      \"spatial hashing\" algorithm.")
+    (para "Essentially, the algorithm divides a given rectangular region of
+      height " (item parameter "height") " and width " (item parameter "width") 
+      " into square cells " (item parameter "cell_size") " by "
+      (item parameter "cell_size") ":")
+    (render-noescape "overview_alg0.html")
+    (para "As shown, the system uses the same coordinate system as "
+      (link-ext "http://opengl.org" "OpenGL") ".")
+    (para "Cells are numbered progressively, increasing along columns and
+      continuing on successive rows:")
+    (render-noescape "overview_alg3.html")
+    (para "Entities are considered as bounding boxes, oriented on
+      the bottom left corner:")
+    (render-noescape "overview_alg1.html")
+    (para "When entities are added to the region, the positions are snapped
+      to the nearest grid coordinate. All values are rounded down:")
+    (render-noescape "overview_alg2.html")
+    (para "Entities are represented by simple numeric identifiers.")
+    (para "A cell is considered \"active\" if it contains an entity and an
+      entity is in a cell if any point within its bounding box lies within
+      the cell. Entities may, of course, be in more than one cell at a time.")
+    (render-noescape "overview_alg4.html"))
+
+  (subsection
+    (title "Implementation")
+    (para "The algorithm is implemented as a hash table with the numeric
+      identifiers of a cells as keys and ordered sets of entity identifiers
+      as elements.")
+    (para "If a cell contains no entities, it does not have an entry in
+      the hash table.")
+    (para "Two hash tables are used, one for static, immovable entities and
+      the other for dynamic, moving entities."))
+
+)

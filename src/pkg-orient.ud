@@ -1,0 +1,36 @@
+(section
+  (title "Orientation")
+
+  (subsection
+    (title "Overview")
+
+    (para "The " (item package "spatial_hash") " package is a simple
+      implementation of
+      a \"spatial hashing\" algorithm. Essentially, a 2D plane is
+      implicitly partitioned into a grid and entities are placed onto
+      it. The bounding boxes of the entities are used to determine in
+      which grid cells the entities are present (an entity may be in
+      more than one grid cell) and the system can be queried to retrieve
+      sets of entities and cells matching certain conditions.")
+
+    (para "Informally, the system can be used for coarse 2D collision detection.
+      The package allows one to ask \"which entities are in this general area\"
+      or \"which parts of the local area contain entities\". These sets of
+      entities can then be passed to an external fine collision detector to
+      determine actual collisions."))
+
+  (subsection
+    (title "Portability")
+  
+    (para "The package should be portable to any Ada 2005 compiler as it only
+      uses standard packages from " (item package "Ada.Containers") " and has
+      no external dependencies."))
+
+  (subsection
+    (title "Efficiency")
+
+    (para "The package is quite dependent on the performance of the standard
+      containers on the target implementation but the complexity of the
+      algorithms should be " (item constant "O(log N)") " in the worst case."))
+
+) ; end of section
