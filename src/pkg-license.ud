@@ -2,7 +2,7 @@
   (title "License")
 
   (para
-    (item package "sysdeps") " is placed into the public domain, for
+    (item package "spatial_hash") " is placed into the public domain, for
     free use by anyone for any purpose. It may be freely modified and
     distributed and comes with absolutely no warranty.")
 
